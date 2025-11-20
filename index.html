@@ -1,0 +1,737 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<title>The Sugarcane Man</title>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta name="description" content="Fresh-pressed sugarcane juice — farm to glass. Wholesale partners, events, and youth employment program. Lavington, Nairobi." />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --green:#0F8A2B;
+  --green-soft:#e9f9e9;
+  --pale:#CFEF9E;
+  --sun:#F4C542;
+  --dark:#0B0B0B;
+  --muted:#6B6B6B;
+  --maxw:1100px;
+  --card-shadow:0 6px 18px rgba(10,10,10,0.05);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html,body{height:100%}
+
+body{
+  font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+  font-weight:500;
+  line-height:1.45;
+  color:var(--dark);
+  margin:0;
+  background:var(--green-soft);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+.container{max-width:var(--maxw);margin:0 auto;padding:24px}
+
+header {
+  width: 100vw; /* full viewport width */
+  left: 0;
+  top: 0;
+  background: linear-gradient(180deg, rgba(15,138,43,0.08), #fff);
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  z-index: 60;
+  backdrop-filter: blur(4px);
+}
+
+
+nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-width:0;
+}
+
+.logo-img{
+  width:48px;height:48px;border-radius:8px;object-fit:cover;flex-shrink:0;
+}
+
+.brand .title{font-weight:700;line-height:1}
+.brand .tag{font-size:12px;color:var(--muted)}
+
+.navlinks{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+
+.navlinks a{
+  color:var(--dark);
+  text-decoration:none;
+  font-weight:600;
+  font-size:14px;
+  padding:6px 8px;
+  border-radius:8px;
+}
+
+.navlinks a:hover{
+  color:#fff;background:var(--green);
+}
+
+.hero{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:24px;
+  align-items:center;
+  padding:48px 0;
+  text-align:left;
+}
+
+@media(min-width:880px){
+  .hero{
+    grid-template-columns:1fr 460px;
+    text-align:left;
+  }
+}
+
+.hero h1{
+  font-size:clamp(26px,4.4vw,40px);
+  margin:0 0 12px;
+  color:var(--green);
+  line-height:1.05;
+}
+
+.hero p{margin:0 0 18px;color:var(--muted);max-width:58ch}
+
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+
+.btn{
+  padding:12px 16px;
+  border-radius:10px;
+  border:0;
+  cursor:pointer;
+  font-weight:700;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+}
+
+.btn-primary{background:var(--green);color:#fff}
+.btn-ghost{background:transparent;border:2px solid var(--green);color:var(--green)}
+
+.card{
+  background:#fff;
+  border-radius:12px;
+  padding:18px;
+  box-shadow:var(--card-shadow);
+  overflow:hidden;
+  margin-bottom:20px;
+}
+
+.green-card{
+  background:#f6fff2;
+  border-left:6px solid rgba(15,138,43,0.9);
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+th,td{
+  padding:10px 12px;
+  text-align:left;
+  border-bottom:1px solid #f0f0f0;
+}
+
+th{
+  background:#fcffeb;
+  font-weight:700;
+}
+
+.pack{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:8px;
+}
+
+.pack span{
+  background:#f5f5f5;
+  padding:6px 10px;
+  border-radius:999px;
+  font-size:13px;
+}
+
+footer{
+  padding:28px 0;
+  color:var(--muted);
+  border-top:1px solid #eee;
+  margin-top:40px;
+}
+
+@media(max-width:880px){
+  .hero{text-align:center;}
+  .hero .cta{justify-content:center;}
+  .hero .card{margin:0 auto;}
+}
+
+
+@media(max-width:480px){
+  header .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+
+@media(max-width:480px){
+  .hero{padding:24px 0;gap:16px}
+  .hero h1{font-size:24px;line-height:1.2}
+  h2{font-size:20px;margin-bottom:12px}
+  h3{font-size:16px;margin-bottom:8px}
+  .navlinks{gap:6px}
+  .navlinks a{font-size:12px;padding:4px 6px}
+  .brand .title{font-size:14px}
+  .logo-img{width:40px;height:40px}
+  form input, form textarea, form button {width:100%; margin-bottom:14px; box-sizing:border-box;}
+  form button{margin-top:6px;}
+}
+
+#backToTop{
+  position:fixed;
+  bottom:30px;
+  right:30px;
+  background:rgba(31,125,50,0.35);
+  color:white;
+  padding:14px 18px;
+  border-radius:50px;
+  font-size:18px;
+  font-weight:600;
+  border:1px solid rgba(255,255,255,0.3);
+  cursor:pointer;
+  backdrop-filter:blur(10px);
+  box-shadow:0 5px 20px rgba(0,0,0,0.2);
+  transition:0.3s ease;
+  display:none;
+}
+
+#backToTop:hover{
+  background:rgba(31,125,50,0.55);
+  transform:translateY(-3px);
+}
+
+#ourstory, #wholesale, #youth, #events, #contact, #home {
+  scroll-margin-top: 110px;
+}
+
+/* ----------------------------------
+   MODERN FAQ
+---------------------------------- */
+.faq-container {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.faq-item {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  border-left: 6px solid var(--green);
+  transition: all 0.3s ease;
+}
+
+.faq-question {
+  width: 100%;
+  padding: 18px 20px;
+  background: #fff;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  text-align: left;
+}
+
+.faq-question:hover {
+  background: var(--green-soft);
+}
+
+.faq-icon {
+  font-size: 22px;
+  font-weight: 300;
+  transition: transform 0.3s ease;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  color: var(--muted);
+  line-height: 1.55;
+  font-size: 15px;
+  transition: max-height 0.35s ease, padding 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 300px;
+  padding: 14px 20px 20px;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg);
+}
+
+/* Modern FAQ Section */
+.faq-section h2 {
+  color: var(--green);
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.faq {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.faq-item {
+  background: #fff;
+  border-radius: 14px;
+  padding: 0;
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  border: 1px solid #e9e9e9;
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 18px 20px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #222;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.faq-icon {
+  font-size: 22px;
+  color: var(--green);
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  background: #fafafa;
+  transition: max-height 0.35s ease;
+  padding: 0 20px;
+}
+
+.faq-answer p {
+  padding: 14px 0 18px;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+@media(max-width:480px){
+  #ourstory .card {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 16px;
+  }
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container" role="banner">
+    <nav>
+      <div class="brand">
+        <img src="Logo.jpeg" alt="The Sugarcane Man Logo" class="logo-img">
+        <div>
+          <div class="title">The Sugarcane Man</div>
+          <div class="tag">Farm to Glass · Lavington, Nairobi</div>
+        </div>
+      </div>
+
+      <div class="navlinks" aria-label="Main navigation">
+        <a href="home.html">Home</a>
+        <a href="#ourstory">Our Story</a>
+        <a href="#wholesale">Wholesale</a>
+        <a href="#youth">Youth</a>
+        <a href="#events">Events</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section id="home" class="container hero">
+  <div>
+    <h1>Fresh-pressed sugarcane juice — chilled & 100% natural</h1>
+    <p>Naturally sweet, rich in electrolytes and antioxidants. Partner with us for wholesale supply, events, or to support youth employment and fair pay for farmers.</p>
+
+    <div class="cta">
+      <button class="btn btn-primary" onclick="location.href='#wholesale'">Wholesale Enquiry</button>
+      <button class="btn btn-ghost" onclick="location.href='#contact'">Order Samples</button>
+    </div>
+
+    <div style="margin-top:22px">
+      <div class="card green-card">
+        <strong>Why sugarcane juice?</strong>
+        <ul style="margin:10px 0 0 18px;color:var(--muted)">
+          <li>Rich in electrolytes and minerals</li>
+          <li>Contains antioxidants, iron, calcium, and vitamin C</li>
+          <li>Hydrating & electrolyte-rich</li>
+          <li>100% natural, no preservatives</li>
+          <li>Cold-pressed fresh daily</li>
+          <li>Versatile for mocktails & wellness menus</li>
+          <li>Pairs well with BBQ, coastal & spicy foods</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="card">
+      <h3 style="margin:0 0 8px;color:var(--green)">Wholesale Snapshot</h3>
+      <p style="margin:0 0 12px;color:var(--muted)">Fresh daily. Bottled & ready-to-serve.</p>
+      <table>
+        <thead><tr><th>Juice Variety</th><th>Price (KES)</th></tr></thead>
+        <tbody>
+          <tr><td>Sugarcane + Lime</td><td>220</td></tr>
+          <tr><td>Sugarcane + Lime + Ginger</td><td>240</td></tr>
+          <tr><td>Sugarcane + Pineapple + Lime</td><td>260</td></tr>
+          <tr><td>Sugarcane + Lime + Turmeric</td><td>280</td></tr>
+          <tr><td>Sugarcane + Lime + Passionfruit</td><td>300</td></tr>
+        </tbody>
+      </table>
+
+      <div style="margin-top:12px">
+        <div class="pack">
+          <span>500 ml</span><span>1 L</span><span>5 L</span>
+          <p style="margin-top:12px;color:var(--muted)">Payment: same-day or weekly invoicing. Delivery fees vary by location.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- YOUR STORY -->
+<section id="ourstory" class="container" style="padding-top:40px">
+  <h2 style="color:var(--green)">Our Story</h2>
+  <div class="card green-card" style="margin-top:10px">
+    <p>What started as a small cart serving chilled sugarcane juice in Lavington has grown into a full farm to glass operation with a purpose. We partner closely with smallholder farmers across Kenya, paying fair weekly rates and providing consistent demand that supports their livelihoods.</p>
+    <p>The Sugarcane Man is reimagining the journey of sugarcane from farm to glass. By building an ethical, transparent supply chain, every cane pressed becomes a story of empowerment, sustainability, and fair trade.</p> 
+    <p>Our mission is bigger than juice. We run a youth employment and skills-training program that equips young people with hands-on experience in production, customer service, delivery logistics, business operations, and entrepreneurship. Every bottle you enjoy directly fuels job creation, confidence building, and community growth.</p>
+    <p>From farm, to press, to bottle, we keep it fresh, natural, and impactful.</p>
+  </div>
+</section>
+
+<!-- WHOLESALE -->
+<section id="wholesale" class="container" style="padding-top:18px">
+  <h2 style="color:var(--green)">Wholesale Partnership Guide</h2>
+  <p>We'd love to work with restaurants, hotels and wellness cafes.</p>
+
+  <div class="card" style="margin-top:12px">
+    <h3 style="margin:0 0 8px;color:var(--green)">Price per Litre (KES)</h3>
+
+    <table>
+      <thead><tr><th>Variety</th><th>Price</th></tr></thead>
+      <tbody>
+        <tr><td>Sugarcane + Lime</td><td>220</td></tr>
+        <tr><td>Sugarcane + Lime + Ginger</td><td>240</td></tr>
+        <tr><td>Sugarcane + Pineapple + Lime</td><td>260</td></tr>
+        <tr><td>Sugarcane + Lime + Turmeric</td><td>280</td></tr>
+        <tr><td>Sugarcane + Lime + Passionfruit</td><td>300</td></tr>
+      </tbody>
+    </table>
+
+    <div style="margin-top:12px">
+      <strong>Packaging Options</strong>
+      <div class="pack" style="margin-top:8px">
+        <span>500 ml</span><span>1 L</span><span>5 L</span>
+      </div>
+
+      <p style="margin-top:12px;color:var(--muted)">Payment: same-day or weekly invoicing. Delivery fees vary by location.</p>
+      <p style="margin-top:12px"><strong>Contact:</strong><br>
+        Nancy: <a href="tel:+254708073946">0708 073 946</a> <br>
+        Jacinta: <a href="tel:+254715669190">0715 669 190</a><br>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- YOUTH PROGRAM -->
+<section id="youth" class="container" style="padding-top:18px">
+  <h2 style="color:var(--green)">Youth Employment Program</h2>
+  <p>The Sugarcane Man is a community-powered social enterprise.</p>
+
+  <ul style="color:var(--muted)">
+    <li>Job creation</li>
+    <li>Skills training</li>
+    <li>Entrepreneurship development</li>
+    <li>Financial independence</li>
+  </ul>
+
+  <!-- YOUTH APPLICATION FORM -->
+  <div class="card green-card" style="margin-top:20px">
+    <h3 style="color:var(--green);margin-top:0;margin-bottom:10px">Apply to the Youth Employment Program</h3>
+    <p style="color:var(--muted);margin-bottom:18px">Submit your details and our team will get back to you.</p>
+
+    <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+      <label style="font-weight:600">Full Name</label>
+      <input type="text" name="name" required
+        style="width:100%;padding:12px;border-radius:10px;border:1px solid #dcdcdc;margin:6px 0 16px;">
+
+      <label style="font-weight:600">Phone Number</label>
+      <input type="text" name="phone" required
+        style="width:100%;padding:12px;border-radius:10px;border:1px solid #dcdcdc;margin:6px 0 16px;">
+
+      <label style="font-weight:600">Age</label>
+      <input type="number" name="age" required
+        style="width:100%;padding:12px;border-radius:10px;border:1px solid #dcdcdc;margin:6px 0 16px;">
+
+      <label style="font-weight:600">Why do you want to join?</label>
+      <textarea name="message" required
+        style="width:100%;padding:12px;height:120px;border-radius:10px;border:1px solid #dcdcdc;margin:6px 0 16px;"></textarea>
+
+      <button type="submit" class="btn btn-primary">Submit Application</button>
+    </form>
+  </div>
+</section>
+
+<!-- EVENTS -->
+  <section id="events" class="container" style="padding-top:18px">
+  <h2 style="color:var(--green)">Events & Cart Hire</h2>
+  <p style="color:var(--muted)">
+    Make your event refreshing, stylish and memorable with our mobile sugarcane juice cart.
+  </p>
+
+  <div class="card green-card" style="margin-top:16px">
+    <h3 style="color:var(--green);margin-top:0">Perfect For:</h3>
+    <ul style="color:var(--muted);margin-left:18px">
+      <li>Weddings & Engagements</li>
+      <li>Corporate Events & Activations</li>
+      <li>Birthday Parties & Baby Showers</li>
+      <li>School Events & Family Fun Days</li>
+    </ul>
+
+    <h3 style="color:var(--green);margin-top:18px">What’s Included:</h3>
+    <ul style="color:var(--muted);margin-left:18px">
+      <li>Mobile juice cart + setup</li>
+      <li>Two trained staff members</li>
+      <li>Fresh-pressed sugarcane juice</li>
+      <li>Choice of flavours (Lime, Ginger, Pineapple etc.)</li>
+      <li>Chilled bottles or on-cart serving</li>
+    </ul>
+
+    <h3 style="color:var(--green);margin-top:18px">Packages:</h3>
+    <div class="pack" style="margin-top:8px">
+      <span>50 Guests</span>
+      <span>100 Guests</span>
+      <span>200+ Guests</span>
+    </div>
+
+    <p style="color:var(--muted);margin-top:14px">
+      Pricing depends on number of guests, location and serving style.
+    </p>
+
+    <div class="cta" style="margin-top:20px">
+      <button class="btn btn-primary" onclick="window.location.href='https://wa.me/254708073946'">
+        WhatsApp for Quote
+      </button>
+      <button class="btn btn-ghost" onclick="window.location.href='tel:+254708073946'">
+        Call to Book
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+
+<section id="faq" class="faq-section container">
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq">
+
+    <div class="faq-item">
+      <button class="faq-question">
+        Do you deliver?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Yes — we deliver across Nairobi. Delivery fees depend on the distance from Lavington.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        How long does the juice stay fresh?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Our juices stay fresh for 3–5 days when refrigerated. They contain no preservatives.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        Do you offer wholesale pricing?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Yes! Restaurants, cafés, hotels and offices can access discounted wholesale rates.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        Can I hire the juice cart for events?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Yes — we provide the mobile cart, staff and chilled juice packages for events.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        What ingredients do you use?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Only fresh sugarcane and natural fruits — no added sugar or preservatives.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="container" style="padding-top:18px;padding-bottom:40px">
+  <h2 style="color:var(--green)">Contact & Ordering</h2>
+
+  <div class="card" style="margin-top:12px">
+    <p style="color:var(--muted)">Reach out to place an order, request samples, or discuss wholesale supply.</p>
+
+    <p><strong>Nancy</strong><br>
+      <a href="tel:+254708073946">0708 073 946</a>  
+    </p>
+
+    <p><strong>Jacinta</strong><br>
+      <a href="tel:+254715669190">0715 669 190</a>
+    </p>
+
+    <p><strong>Location:</strong><br>
+      Lavington, Nairobi
+    </p>
+
+    <div class="cta" style="margin-top:18px">
+      <button class="btn btn-primary" onclick="window.location.href='tel:+254708073946'">
+        Call Now
+      </button>
+
+      <button class="btn btn-ghost" onclick="window.location.href='https://wa.me/254708073946'">
+        WhatsApp Order
+      </button>
+    </div>
+  </div>
+</section>
+
+
+
+</main>
+
+<footer>
+  <div class="container">
+    <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <div>
+        <div style="font-weight:700">The Sugarcane Man</div>
+        <div style="font-size:13px;color:var(--muted)">Lavington, Nairobi</div>
+      </div>
+      <div style="font-size:13px;color:var(--muted)">
+        <div>Contact: 0715 669 190 · 0708 073 946</div>
+        <div style="margin-top:8px"><a href="terms-and-privacy.html">Terms & Privacy</a>
+
+
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button id="backToTop">⥣</button>
+
+<script>
+  const faqItems = document.querySelectorAll(".faq-item");
+
+  faqItems.forEach(item => {
+    const question = item.querySelector(".faq-question");
+
+    question.addEventListener("click", () => {
+      item.classList.toggle("active");
+
+      const answer = item.querySelector(".faq-answer");
+      if (item.classList.contains("active")) {
+        answer.style.maxHeight = answer.scrollHeight + "px";
+      } else {
+        answer.style.maxHeight = null;
+      }
+    });
+  });
+</script>
+<script> btn = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+  btn.style.display = window.scrollY > 300 ? "block" : "none";
+});
+
+btn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+
+</script>
+
+</body>
+</html>
