@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Sugarcane Man - Farm to Glass</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/png" />
+  <link rel="apple-touch-icon" href="favicon.ico" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap">
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+   body {
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+    a {
+      color: inherit;
+    }
+
+    img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      border-radius: 14px;
+      margin: 20px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      display: block;
+    }
+
+    /* ---------------- HEADER ---------------- */
+    header {
+      position: relative;
+      width: 100%;
+      padding: 24px 18px;
+      display: flex;
+      flex-direction: column;        /* stack on mobile */
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+
+      background-image: url("photo1.jpeg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      border-bottom-left-radius: 35px;
+      border-bottom-right-radius: 35px;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(31, 125, 50, 0.45);
+      backdrop-filter: blur(0px);
+      -webkit-backdrop-filter: blur(0px);
+      z-index: 0;
+    }
+
+    header img,
+    header h1 {
+      position: relative;
+      z-index: 2;
+    }
+
+    header img {
+      height: 64px;
+      width: auto;
+      border-radius: 12px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+      text-align: center;
+      color: #ffffff;
+      font-weight: 700;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+    }
+
+    /* Layout wrapper class reused */
+    .section {
+      padding: 40px 18px;
+      max-width: 1300px;
+      margin: 0 auto;
+      display: grid;
+      gap: 20px;
+      grid-template-columns: 1fr; /* mobile: 1 column */
+    }
+
+    h2 {
+      color: #1f7d32;
+      margin-bottom: 15px;
+      font-size: 24px;
+    }
+
+    h3 {
+      margin-top: 10px;
+      margin-bottom: 8px;
+      font-size: 18px;
+      color: #2a2a2a;
+    }
+
+    .card {
+      background: white;
+      padding: 24px;
+      border-radius: 22px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      transition: 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 180px;
+      height: 180px;
+      background: rgba(106,196,97,0.15);
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+    }
+
+    .card * {
+      position: relative;
+      z-index: 1;
+    }
+
+    ul {
+      padding-left: 18px;
+      margin-top: 6px;
+      margin-bottom: 10px;
+    }
+
+    ul li {
+      margin: 6px 0;
+      font-size: 14px;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 30px 18px;
+      background: rgba(255, 255, 255, 0.28);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-top: 2px solid rgba(255,255,255,0.3);
+      border-top-left-radius: 40px;
+      border-top-right-radius: 40px;
+      color: #1f7d32;
+      font-weight: 600;
+      font-size: 16px;
+      box-shadow: 0 -6px 18px rgba(0,0,0,0.08);
+      margin-top: 30px;
+    }
+
+    /* Back to Top Button */
+    #backToTop {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(31, 125, 50, 0.35);
+      color: white;
+      padding: 12px 16px;
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: 600;
+      border: 1px solid rgba(255,255,255,0.3);
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+      transition: 0.3s ease;
+      display: none;
+      z-index: 99;
+    }
+
+    #backToTop:hover {
+      background: rgba(31, 125, 50, 0.55);
+      transform: translateY(-3px);
+    }
+
+    /* --------- RESPONSIVE BREAKPOINTS --------- */
+
+    /* Small tablets / large phones landscape */
+    @media (min-width: 600px) {
+      header {
+        padding: 32px 32px;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 18px;
+      }
+
+      header h1 {
+        font-size: 28px;
+        text-align: left;
+      }
+
+      header img {
+        height: 72px;
+      }
+
+      .section {
+        padding: 45px 32px;
+        gap: 24px;
+      }
+
+      ul li {
+        font-size: 15px;
+      }
+    }
+
+    /* Tablets and small laptops */
+    @media (min-width: 768px) {
+      .section {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+      }
+
+      h2 {
+        font-size: 26px;
+      }
+    }
+
+    /* Desktops */
+    @media (min-width: 1024px) {
+      .section {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns like brochure */
+        gap: 25px;
+      }
+
+      header h1 {
+        font-size: 32px;
+      }
+
+      header img {
+        height: 80px;
+      }
+
+      footer {
+        font-size: 18px;
+      }
+    }
+
+    /* Optional: make the first section always 3 cards in row on desktop
+       and second section also 3 columns (already handled by base .section) */
+
+      body {
+  font-weight: 500; /* makes overall text thicker */
+}
+ 
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="Logo.jpeg" alt="Sugar Cane Man Logo" />
+  <h1>The Sugarcane Man – Farm to Glass</h1>
+</header>
+
+<!-- FIRST ROW: 3 CARDS -->
+<div class="section">
+  <a href="index.html#wholesale" style="text-decoration:none;">
+    <div class="card" style="cursor:pointer;">
+      <h2>Wholesale Price Guide</h2>
+      <p><strong>Premium Fresh-Pressed Sugarcane Juice</strong></p>
+      <p>Delivery: Fresh daily · Chilled · Ready to serve</p>
+      <ul>
+        <li>Sugarcane + Lime – <strong>220 Ksh</strong></li>
+        <li>Sugarcane + Lime + Ginger – <strong>240 Ksh</strong></li>
+        <li>Sugarcane + Pineapple + Lime – <strong>260 Ksh</strong></li>
+        <li>Sugarcane + Lime + Turmeric – <strong>280 Ksh</strong></li>
+        <li>Sugarcane + Lime + Passionfruit – <strong>300 Ksh</strong></li>
+      </ul>
+
+      <h3>Packaging Options</h3>
+      <ul>
+        <li>500 ml bottles</li>
+        <li>1 L bottles</li>
+        <li>5 L containers (pour-ready)</li>
+      </ul>
+      <img src="photo2.jpeg" alt="Sugarcane juice with lime" />
+    </div>
+  </a>
+
+  <a href="index.html#contact" style="text-decoration:none;">
+    <div class="card" style="cursor:pointer;">
+      <h2>Let's Work Together</h2>
+
+      <img src="photo3.jpeg" alt="Sugarcane juice with lime" />
+      <img src="photo4.jpeg" alt="Sugarcane juice with lime" />
+
+      <ul>
+        <li>Nancy: 0703 079 946 / 0762 664 838</li>
+        <li>Jacinta: 0715 669 190</li>
+        <li>Location: Lavington, Nairobi</li>
+      </ul>
+    </div>
+  </a>
+
+  <a href="index.html#about" style="text-decoration:none;">
+    <div class="card" style="cursor:pointer;">
+      <h2 style="text-align:center;font-size:26px;">
+        THE SUGARCANE MAN<br>
+        <span style="font-size:18px;color:#444;">Farm to Glass</span>
+      </h2>
+
+      <img src="photo5.jpeg" alt="Sugarcane juice with lime" />
+
+      <p>The Sugar Cane Man is reimagining the journey of sugar cane, from farm to glass. By creating a consistent, ethical supply chain that pays farmers weekly, we’re turning sugar cane into a source of empowerment and sustainability. Each cane pressed is a story of fair trade, youth employment, and local innovation.</p>
+    </div>
+  </a>
+</div>
+
+<!-- SECOND ROW: 3 CARDS -->
+ <a href="index.html#about" style="text-decoration:none;">
+ <div class="section">
+  <div class="card">
+    <h2>Wholesale Partnership Guide</h2>
+    <p><strong>Welcome to The Sugar Cane Man</strong></p>
+    <p>What began as a simple idea to share the naturally sweet and nourishing goodness of fresh-pressed sugarcane juice has grown into a mission that uplifts our youth through employment and brings hope to families across Nairobi.</p>
+    <img src="photo6.jpeg" alt="Sugarcane juice with lime" />
+  </div>
+  
+ 
+  <div class="card">
+    <h2>Why Sugarcane Juice Is the Perfect Beverage</h2>
+    <h3>Naturally Refreshing & Hydrating</h3>
+    <ul>
+      <li>Rich in electrolytes and minerals</li>
+      <li>Contains antioxidants, iron, calcium, and vitamin C</li>
+      <li>Perfect for Nairobi’s warm climate</li>
+    </ul>
+    <img src="photo8.jpeg" alt="Sugarcane juice with lime" />
+  </div>
+
+  <div class="card">
+    <h2>The Story Behind The Juice</h2>
+    <p><strong>Nurturing Youth. Empowering Community. One Cup at a Time.</strong></p>
+    <p>The Sugar Cane Man is more than a beverage business – it is a community-powered social enterprise. Through this initiative, we are creating opportunities for job creation, skills training, entrepreneurial development, self-confidence and financial independence.</p>
+    <img src="photo9.jpeg" alt="Sugarcane juice with lime" />
+  </div>
+</div>
+
+<footer>
+  © 2025 The Sugar Cane Man – Farm to Glass
+</footer>
+
+<button id="backToTop">⥣</button>
+
+<script>
+  const btn = document.getElementById("backToTop");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      btn.style.display = "block";
+    } else {
+      btn.style.display = "none";
+    }
+  });
+
+  btn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script>
+
+</body>
+</html>
